@@ -1,0 +1,653 @@
+Here's a single HTML file that creates a vibrant landing page celebrating the Jamaican-Japanese cultural fusion:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island & Sakura | Jamaican-Japanese Family Fusion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Caribbean:wght@400;700&display=swap');
+        
+        :root {
+            --jamaica-yellow: #FFD100;
+            --jamaica-green: #009B3A;
+            --japan-red: #BC002D;
+            --sakura-pink: #F8C3CD;
+            --urban-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .caribbean-font {
+            font-family: 'Caribbean', cursive;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1496566303695-89370818f8af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .sakura-bg {
+            background-color: var(--sakura-pink);
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43 7c1.657 0 3-1.343 3-3s-1.657-3-3-3-3 1.343-3 3 1.657 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.657-3-3-3-3 1.343-3 3 1.657 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.657-3-3-3-3 1.343-3 3 1.657 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.657-3-3-3-3 1.343-3 3 1.657 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .tropical-bg {
+            background: linear-gradient(135deg, var(--jamaica-yellow) 0%, var(--jamaica-green) 100%);
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .recipe-card {
+            transition: all 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background-color: var(--japan-red);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .floating-sakura {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-palm {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .sakura-border {
+            border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M30,10 L50,30 L70,10 L90,30 L70,50 L90,70 L70,90 L50,70 L30,90 L10,70 L30,50 L10,30 L30,10 Z' fill='none' stroke='%23BC002D' stroke-width='2'/%3E%3C/svg%3E") 20 / 20px round;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-umbrella-beach text-2xl mr-2" style="color: var(--jamaica-yellow);"></i>
+                        <i class="fas fa-chevron-right text-gray-400 mx-1"></i>
+                        <i class="fas fa-tree text-2xl ml-2" style="color: var(--sakura-pink);"></i>
+                        <span class="ml-2 text-xl font-bold">Island & Sakura</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">Home</a>
+                        <a href="#story" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">Our Story</a>
+                        <a href="#culture" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">Cultural Fusion</a>
+                        <a href="#recipes" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">Recipes</a>
+                        <a href="#gallery" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">Gallery</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-100">Connect</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md hover:bg-gray-100 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Home</a>
+                <a href="#story" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Our Story</a>
+                <a href="#culture" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Cultural Fusion</a>
+                <a href="#recipes" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Recipes</a>
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32 relative overflow-hidden">
+        <div class="absolute top-10 right-10 floating-sakura">
+            <i class="fas fa-spa text-4xl" style="color: var(--sakura-pink);"></i>
+        </div>
+        <div class="absolute bottom-10 left-10 floating-palm">
+            <i class="fas fa-palm-tree text-4xl" style="color: var(--jamaica-green);"></i>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 caribbean-font">One Love, One Family</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Bridging the vibrant spirit of Jamaica with the serene beauty of Japan across Brooklyn and Tokyo</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#story" class="px-8 py-3 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-200 transition duration-300">
+                    Discover Our Journey
+                </a>
+                <a href="#recipes" class="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-gray-900 transition duration-300">
+                    Taste the Fusion
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="py-20 sakura-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Family Story</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg">From the bustling streets of Brooklyn to the tranquil gardens of Tokyo, our family embodies the beautiful fusion of two rich cultures.</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 w-4 h-4 rounded-full bg-red-600"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/3 mb-4 md:mb-0">
+                                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Brooklyn Bridge" class="w-full h-48 object-cover rounded">
+                                </div>
+                                <div class="md:w-2/3 md:pl-6">
+                                    <h3 class="text-2xl font-bold mb-2">Brooklyn Beginnings</h3>
+                                    <p class="text-gray-600 mb-2">1995 - 2005</p>
+                                    <p class="text-gray-700">Our story began in Brooklyn, where Jamaican rhythms met Japanese traditions in the melting pot of New York City. The vibrant Caribbean community and the growing Japanese diaspora created the perfect backdrop for cultural exchange.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 w-4 h-4 rounded-full bg-red-600"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/3 mb-4 md:mb-0">
+                                    <img src="https://images.unsplash.com/photo-1492571350019-22c08b1d4f77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Wedding" class="w-full h-48 object-cover rounded">
+                                </div>
+                                <div class="md:w-2/3 md:pl-6">
+                                    <h3 class="text-2xl font-bold mb-2">A Union of Cultures</h3>
+                                    <p class="text-gray-600 mb-2">2008</p>
+                                    <p class="text-gray-700">Our parents' wedding blended Jamaican and Japanese traditions - a reggae processional followed by a sake ceremony. The celebration featured jerk chicken alongside sushi, steel drum music with taiko drums, creating a truly unique fusion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 w-4 h-4 rounded-full bg-red-600"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex flex-col md:flex-row md:items-center">
+                                <div class="md:w-1/3 mb-4 md:mb-0">
+                                    <img src="https://images.unsplash.com/photo-1492571350019-22c08b1d4f77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Family" class="w-full h-48 object-cover rounded">
+                                </div>
+                                <div class="md:w-2/3 md:pl-6">
+                                    <h3 class="text-2xl font-bold mb-2">Growing Roots in Two Worlds</h3>
+                                    <p class="text-gray-600 mb-2">2010 - Present</p>
+                                    <p class="text-gray-700">With homes in both Brooklyn and Tokyo, our family thrives at the intersection of these cultures. Summers in Jamaica, spring in Japan for cherry blossom season, and year-round celebrations that honor both heritages equally.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Fusion Section -->
+    <section id="culture" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Cultural Fusion</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg">Discover how we blend the vibrant energy of Jamaica with the refined elegance of Japan in our daily lives.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Culture Card 1 -->
+                <div class="culture-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568219656418-15c329312bf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jamaican Festival" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center mr-3">
+                                <i class="fas fa-music text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Music & Dance</h3>
+                        </div>
+                        <p class="text-gray-600">Our family gatherings feature a unique blend of reggae beats with traditional Japanese folk music. Dancehall moves meet the precision of bon odori, creating a celebration that's both energetic and graceful.</p>
+                    </div>
+                </div>
+                
+                <!-- Culture Card 2 -->
+                <div class="culture-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Festival" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center mr-3">
+                                <i class="fas fa-calendar-alt text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Celebrations</h3>
+                        </div>
+                        <p class="text-gray-600">We celebrate both Jamaican Independence Day and Japanese Obon festival with equal enthusiasm. Our hybrid celebrations include flying kites with Jamaican colors and eating jerk chicken bento boxes.</p>
+                    </div>
+                </div>
+                
+                <!-- Culture Card 3 -->
+                <div class="culture-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Language" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center mr-3">
+                                <i class="fas fa-language text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Language & Values</h3>
+                        </div>
+                        <p class="text-gray-600">Our home resonates with Jamaican Patois, Japanese, and English. We've blended the Jamaican concept of "Irie" (everything's alright) with the Japanese "Omotenashi" (selfless hospitality) to create our unique family philosophy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Section -->
+    <section id="recipes" class="py-20 tropical-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Fusion Recipes</h2>
+                <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg">Our kitchen is where the magic happens - taste the delicious blend of Caribbean flavors with Japanese techniques.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recipe Card 1 -->
+                <div class="recipe-card bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jerk Sushi Roll" class="w-full h-full object-cover">
+                        <div class="absolute top-0 left-0 bg-red-600 text-white px-3 py-1 text-sm font-bold">Family Favorite</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Jerk Chicken Sushi Rolls</h3>
+                        <p class="text-gray-600 mb-4">Spicy Jamaican jerk chicken wrapped in sushi rice with a touch of mango salsa, creating the perfect bite of fusion cuisine.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium"><i class="fas fa-utensils mr-1"></i> 45 mins</span>
+                            <button class="text-red-600 font-bold hover:text-red-800 transition duration-300">View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recipe Card 2 -->
+                <div class="recipe-card bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Ramen Soup" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Callaloo Ramen</h3>
+                        <p class="text-gray-600 mb-4">Traditional Japanese ramen gets a Caribbean twist with callaloo greens and coconut milk in the broth, topped with ackee and saltfish.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium"><i class="fas fa-utensils mr-1"></i> 1 hour</span>
+                            <button class="text-red-600 font-bold hover:text-red-800 transition duration-300">View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recipe Card 3 -->
+                <div class="recipe-card bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dessert" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Sakura Rum Cake</h3>
+                        <p class="text-gray-600 mb-4">The classic Jamaican rum cake infused with cherry blossom essence and decorated with edible sakura flowers.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium"><i class="fas fa-utensils mr-1"></i> 2 hours</span>
+                            <button class="text-red-600 font-bold hover:text-red-800 transition duration-300">View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-3 bg-white text-green-700 font-bold rounded-full hover:bg-gray-100 transition duration-300">
+                    Explore More Recipes <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Moments of Fusion</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg">A visual journey through our family's blended traditions and everyday moments.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Family Gathering" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cherry Blossoms" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Beach Day" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="New Year" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cooking" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Festival" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Tokyo Streets" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Family Portrait" class="w-full h-48 object-cover transform hover:scale-105 transition duration-500">
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-3 border-2 border-gray-900 text-gray-900 font-bold rounded-full hover:bg-gray-900 hover:text-white transition duration-300">
+                    View Full Gallery <i class="fas fa-images ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax py-32 text-white" style="background-image: url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 caribbean-font">"In diversity there is beauty and there is strength."</h2>
+            <p class="text-xl md:text-2xl">Our family lives by these words every day, finding harmony in our differences and strength in our unity.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Connect With Us</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg">We love sharing our cultural journey and connecting with others who celebrate diversity.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700 transition duration-300">
+                                Send Message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="bg-blue-600 text-white p-10 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Our Cultural Community</h3>
+                            <p class="mb-8">Join our growing community of multicultural families sharing recipes, traditions, and stories of cultural fusion.</p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Locations</h4>
+                                        <p>Brooklyn, New York & Tokyo, Japan</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Email Us</h4>
+                                        <p>hello@islandandsakura.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                                        <i class="fas fa-hashtag"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Social Media</h4>
+                                        <p>#IslandAndSakura #JamaicanJapaneseFusion</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4 mt-8">
+                            <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition duration-300">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Join Our Cultural Journey</h2>
+            <p class="mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for monthly recipes, cultural insights, and family stories from Brooklyn to Tokyo.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-2 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                <button class="px-6 py-3 bg-yellow-500 text-gray-900 font-bold rounded-lg hover:bg-yellow-400 transition duration-300">
+                    Subscribe <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-umbrella-beach text-2xl mr-2" style="color: var(--jamaica-yellow);"></i>
+                        <i class="fas fa-chevron-right text-gray-400 mx-1"></i>
+                        <i class="fas fa-tree text-2xl ml-2" style="color: var(--sakura-pink);"></i>
+                        <span class="ml-2 text-xl font-bold">Island & Sakura</span>
+                    </div>
+                    <p class="text-gray-400">Celebrating the beautiful fusion of Jamaican and Japanese cultures across continents.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#story" class="text-gray-400 hover:text-white transition duration-300">Our Story</a></li>
+                        <li><a href="#culture" class="text-gray-400 hover:text-white transition duration-300">Cultural Fusion</a></li>
+                        <li><a href="#recipes" class="text-gray-400 hover:text-white transition duration-300">Recipes</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Recipe Book</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cultural Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Island & Sakura. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-red-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-red-700 transition duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Recipe card hover effect
+        const recipeCards = document.querySelectorAll('.recipe-card');
+        
+        recipeCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                img.style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
